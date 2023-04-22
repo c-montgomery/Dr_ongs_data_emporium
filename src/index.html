@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Ong's Data Emporium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #212529;
+            padding: 20px;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav:hover {
+            color: #ccc;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+            padding: 20px;
+        }
+
+        .team, .data, .contact {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script>
+        function navigateTo(section) {
+            const sections = document.querySelectorAll('.content');
+            sections.forEach((element) => {
+                element.classList.remove('active');
+            });
+
+            document.getElementById(section).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <img src="your_logo_url_here" alt="Logo 1">
+        <div>Dr. Ong's Data Emporium</div>
+        <img src="your_logo_url_here" alt="Logo 2">
+    </header>
+
+    <nav>
+        <div class="nav" onclick="navigateTo('team')">Team</div>
+        <div class="nav" onclick="navigateTo('data')">Data</div>
+        <div class="nav" onclick="navigateTo('contact')">Contact Us</div>
+    </nav>
+
+    <main>
+        <section id="team" class="content team">
+            <h2>Our Team</h2>
+            <!-- Team content goes here -->
+        </section>
+
+        <section id="data" class="content data">
+            <h2>Data</h2>
+            <!-- Data content goes here -->
+        </section>
+
+        <section id="contact" class="content contact">
+            <h2>Contact Us</h2>
+            <!-- Contact content goes here -->
+        </section>
+    </main>
+</body>
+</html>
+
